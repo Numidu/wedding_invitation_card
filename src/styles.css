@@ -1,3 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import 'tailwindcss';
+body{
+  font-family: 'Playfair Display', serif;
+}
+.fade-in {
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}

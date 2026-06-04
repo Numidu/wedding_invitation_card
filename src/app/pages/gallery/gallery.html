@@ -1,0 +1,73 @@
+<section class="bg-white py-24 px-6">
+
+  <div class="max-w-6xl mx-auto">
+
+    <div class="text-center mb-16">
+
+      <p class="uppercase tracking-[0.4em] text-gray-500 text-sm mb-4">
+        Memories
+      </p>
+
+      <h2 class="text-4xl md:text-5xl font-light">
+        Gallery
+      </h2>
+
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+
+      <img
+        src="image/gallery1.jfif"
+        alt=""
+        class="w-full h-64 object-cover rounded-2xl cursor-pointer hover:scale-105 transition duration-300"
+        (click)="openImage('images/gallery1.jpg')">
+
+      <img
+        src="image/gallery2.jfif"
+        alt=""
+        class="w-full h-64 object-cover rounded-2xl cursor-pointer hover:scale-105 transition duration-300"
+        (click)="openImage('images/gallery2.jpg')">
+
+      <img
+        src="image/gallery3.jfif"
+        alt=""
+        class="w-full h-64 object-cover rounded-2xl cursor-pointer hover:scale-105 transition duration-300"
+        (click)="openImage('images/gallery3.jpg')">
+
+      <img
+        src="image/gallery4.jfif"
+        alt=""
+        class="w-full h-64 object-cover rounded-2xl cursor-pointer hover:scale-105 transition duration-300"
+        (click)="openImage('images/gallery4.jpg')">
+
+      <img
+        src="image/gallery5.jfif"
+        alt=""
+        class="w-full h-64 object-cover rounded-2xl cursor-pointer hover:scale-105 transition duration-300"
+        (click)="openImage('images/gallery5.jpg')">
+
+      <img
+        src="image/gallery6.jfif"
+        alt=""
+        class="w-full h-64 object-cover rounded-2xl cursor-pointer hover:scale-105 transition duration-300"
+        (click)="openImage('images/gallery6.jpg')">
+
+    </div>
+
+  </div>
+
+  @if(selectedImage()) {
+
+    <div
+      class="fixed inset-0 bg-black/90 flex items-center justify-center z-50"
+      (click)="closeImage()">
+
+      <img
+        [src]="selectedImage()"
+        class="max-w-[90%] max-h-[90%] rounded-2xl">
+
+    </div>
+
+  }
+
+</section>

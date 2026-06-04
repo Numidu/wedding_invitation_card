@@ -1,0 +1,100 @@
+<section class="relative overflow-hidden" style="height:100vh; background:#1a1410; font-family:'Cormorant Garamond', Georgia, serif;">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Jost:wght@200;300&display=swap" rel="stylesheet">
+
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover" style="z-index:0;">
+    <source src="video/wedding.mp4" type="video/mp4">
+  </video>
+
+  <audio
+  #audioPlayer
+  loop>
+
+  <source
+    src="music/weddingmusic.mp3"
+    type="audio/mpeg">
+
+</audio>
+
+<button
+  (click)="toggleMusic()"
+  class="absolute top-6 right-6 z-20
+         bg-white/20 backdrop-blur-md
+         px-4 py-2 rounded-full text-white">
+
+  {{ isPlaying ? '🔇 Music Off' : '🎵 Music On' }}
+
+</button>
+
+  <!-- Layered Overlay -->
+  <div class="absolute inset-0" style="z-index:1; background: radial-gradient(ellipse at 50% 0%, rgba(180,140,80,0.18) 0%, transparent 60%), linear-gradient(180deg, rgba(10,8,6,0.55) 0%, rgba(20,14,10,0.4) 50%, rgba(10,8,6,0.75) 100%);"></div>
+
+  <!-- Top ornament -->
+  <div class="absolute top-8 left-1/2 -translate-x-1/2" style="z-index:3;">
+    <svg width="220" height="24" viewBox="0 0 220 24" fill="none">
+      <line x1="0" y1="12" x2="90" y2="12" stroke="#c9a96e" stroke-width="0.5" stroke-opacity="0.5"/>
+      <polygon points="110,4 118,12 110,20 102,12" stroke="#c9a96e" stroke-width="0.5" fill="none" stroke-opacity="0.7"/>
+      <line x1="130" y1="12" x2="220" y2="12" stroke="#c9a96e" stroke-width="0.5" stroke-opacity="0.5"/>
+    </svg>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 h-full flex flex-col justify-center items-center text-center px-6" style="color:#f5ede0;">
+
+    <!-- Eyebrow -->
+    <p style="font-family:'Jost',sans-serif; font-weight:200; font-size:10px; letter-spacing:0.55em; text-transform:uppercase; color:#c9a96e; margin:0 0 1.5rem;">
+      Wedding Invitation
+    </p>
+
+    <!-- Diamond divider -->
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:1.4rem;">
+      <span style="width:60px; height:0.5px; background:linear-gradient(90deg,transparent,#c9a96e88,#c9a96e);"></span>
+      <span style="width:5px; height:5px; background:#c9a96e; transform:rotate(45deg); flex-shrink:0;"></span>
+      <span style="width:3px; height:3px; background:#c9a96e; transform:rotate(45deg); flex-shrink:0; opacity:0.5;"></span>
+      <span style="width:5px; height:5px; background:#c9a96e; transform:rotate(45deg); flex-shrink:0;"></span>
+      <span style="width:60px; height:0.5px; background:linear-gradient(90deg,#c9a96e,#c9a96e88,transparent);"></span>
+    </div>
+
+    <!-- Names -->
+    <h1 style="font-family:'Cormorant Garamond',Georgia,serif; font-weight:300; font-style:italic; font-size:clamp(3rem,8vw,4.8rem); line-height:1.05; color:#f5ede0; letter-spacing:0.01em; margin:0 0 0.15em;">
+      Numidu <span style="font-style:normal; color:#c9a96e; font-size:0.72em;">&amp;</span> Bride
+    </h1>
+
+    <!-- Tagline -->
+    <p style="font-family:'Jost',sans-serif; font-weight:200; font-size:12px; letter-spacing:0.3em; text-transform:uppercase; color:rgba(201,169,110,0.7); margin:1.5rem 0 0.5rem;">
+      We are getting married
+    </p>
+
+    <!-- Date -->
+    <div style="display:flex; align-items:center; justify-content:center; gap:16px; margin:0.6rem 0 2.4rem;">
+      <span style="font-family:'Jost',sans-serif; font-weight:300; font-size:13px; letter-spacing:0.3em; text-transform:uppercase; color:#f0e0c8;">December</span>
+      <span style="width:3px; height:3px; border-radius:50%; background:#c9a96e; flex-shrink:0;"></span>
+      <span style="font-family:'Jost',sans-serif; font-weight:300; font-size:17px; letter-spacing:0.15em; color:#f0e0c8;">15</span>
+      <span style="width:3px; height:3px; border-radius:50%; background:#c9a96e; flex-shrink:0;"></span>
+      <span style="font-family:'Jost',sans-serif; font-weight:300; font-size:13px; letter-spacing:0.3em; text-transform:uppercase; color:#f0e0c8;">2026</span>
+    </div>
+
+    <!-- Button — Angular click binding preserved -->
+    <button
+      (click)="openInvitation()"
+      style="display:inline-flex; align-items:center; gap:10px; font-family:'Jost',sans-serif; font-weight:300; font-size:11px; letter-spacing:0.4em; text-transform:uppercase; color:#f5ede0; background:transparent; border:0.5px solid rgba(201,169,110,0.5); padding:13px 32px; border-radius:100px; cursor:pointer; transition:all 0.4s ease;"
+      onmouseover="this.style.borderColor='#c9a96e'; this.style.letterSpacing='0.5em'; this.style.transform='scale(1.04)'"
+      onmouseout="this.style.borderColor='rgba(201,169,110,0.5)'; this.style.letterSpacing='0.4em'; this.style.transform='scale(1)'">
+      Open Invitation
+    </button>
+
+  </div>
+
+  <!-- Bottom ornament -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2" style="z-index:3;">
+    <svg width="220" height="24" viewBox="0 0 220 24" fill="none">
+      <line x1="0" y1="12" x2="90" y2="12" stroke="#c9a96e" stroke-width="0.5" stroke-opacity="0.5"/>
+      <polygon points="110,4 118,12 110,20 102,12" stroke="#c9a96e" stroke-width="0.5" fill="none" stroke-opacity="0.7"/>
+      <line x1="130" y1="12" x2="220" y2="12" stroke="#c9a96e" stroke-width="0.5" stroke-opacity="0.5"/>
+    </svg>
+  </div>
+
+</section>
