@@ -8,49 +8,75 @@
         Memories
       </p>
 
-      <h2 class="text-4xl md:text-5xl font-light">
+      <h2 class="text-4xl md:text-5xl font-light mb-3">
         Gallery
       </h2>
 
+      <div class="w-16 h-px bg-gray-300 mx-auto"></div>
+
     </div>
 
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
 
-      <img
-        src="image/gallery1.jfif"
-        alt=""
-        class="w-full h-64 object-cover rounded-2xl cursor-pointer hover:scale-105 transition duration-300"
-        (click)="openImage('images/gallery1.jpg')">
+      <div
+        class="group relative overflow-hidden rounded-3xl shadow-md cursor-pointer"
+        (click)="openImage('image/gallery1.jfif')">
+        <img
+          src="image/gallery1.jfif"
+          alt=""
+          class="w-full h-72 object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-90">
+        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition duration-300 rounded-3xl"></div>
+      </div>
 
-      <img
-        src="image/gallery2.jfif"
-        alt=""
-        class="w-full h-64 object-cover rounded-2xl cursor-pointer hover:scale-105 transition duration-300"
-        (click)="openImage('images/gallery2.jpg')">
+      <div
+        class="group relative overflow-hidden rounded-3xl shadow-md cursor-pointer"
+        (click)="openImage('image/gallery2.jfif')">
+        <img
+          src="image/gallery2.jfif"
+          alt=""
+          class="w-full h-72 object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-90">
+        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition duration-300 rounded-3xl"></div>
+      </div>
 
-      <img
-        src="image/gallery3.jfif"
-        alt=""
-        class="w-full h-64 object-cover rounded-2xl cursor-pointer hover:scale-105 transition duration-300"
-        (click)="openImage('images/gallery3.jpg')">
+      <div
+        class="group relative overflow-hidden rounded-3xl shadow-md cursor-pointer"
+        (click)="openImage('image/gallery3.jfif')">
+        <img
+          src="image/gallery3.jfif"
+          alt=""
+          class="w-full h-72 object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-90">
+        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition duration-300 rounded-3xl"></div>
+      </div>
 
-      <img
-        src="image/gallery4.jfif"
-        alt=""
-        class="w-full h-64 object-cover rounded-2xl cursor-pointer hover:scale-105 transition duration-300"
-        (click)="openImage('images/gallery4.jpg')">
+      <div
+        class="group relative overflow-hidden rounded-3xl shadow-md cursor-pointer"
+        (click)="openImage('image/gallery4.jfif')">
+        <img
+          src="image/gallery4.jfif"
+          alt=""
+          class="w-full h-72 object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-90">
+        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition duration-300 rounded-3xl"></div>
+      </div>
 
-      <img
-        src="image/gallery5.jfif"
-        alt=""
-        class="w-full h-64 object-cover rounded-2xl cursor-pointer hover:scale-105 transition duration-300"
-        (click)="openImage('images/gallery5.jpg')">
+      <div
+        class="group relative overflow-hidden rounded-3xl shadow-md cursor-pointer"
+        (click)="openImage('image/gallery5.jfif')">
+        <img
+          src="image/gallery5.jfif"
+          alt=""
+          class="w-full h-72 object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-90">
+        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition duration-300 rounded-3xl"></div>
+      </div>
 
-      <img
-        src="image/gallery6.jfif"
-        alt=""
-        class="w-full h-64 object-cover rounded-2xl cursor-pointer hover:scale-105 transition duration-300"
-        (click)="openImage('images/gallery6.jpg')">
+      <div
+        class="group relative overflow-hidden rounded-3xl shadow-md cursor-pointer"
+        (click)="openImage('image/gallery6.jfif')">
+        <img
+          src="image/gallery6.jfif"
+          alt=""
+          class="w-full h-72 object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-90">
+        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition duration-300 rounded-3xl"></div>
+      </div>
 
     </div>
 
@@ -59,12 +85,20 @@
   @if(selectedImage()) {
 
     <div
-      class="fixed inset-0 bg-black/90 flex items-center justify-center z-50"
+      class="fixed inset-0 bg-black/95 flex items-center justify-center z-50 backdrop-blur-sm"
       (click)="closeImage()">
 
-      <img
-        [src]="selectedImage()"
-        class="max-w-[90%] max-h-[90%] rounded-2xl">
+      <div class="relative">
+        <img
+          [src]="selectedImage()"
+          class="max-w-[90vw] max-h-[90vh] rounded-3xl shadow-2xl"
+          (click)="$event.stopPropagation()">
+        <button
+          class="absolute -top-4 -right-4 w-10 h-10 bg-white/20 hover:bg-white/30 text-white rounded-full flex items-center justify-center transition text-xl"
+          (click)="closeImage(); $event.stopPropagation()">
+          ✕
+        </button>
+      </div>
 
     </div>
 

@@ -1,99 +1,72 @@
-<section style="background:#FAF7F2;padding:6rem 1.5rem;">
+<section class="rsvp-section">
+  <div class="rsvp-shell">
+    <p class="eyebrow">RSVP</p>
+    <h2>Will You <em>Attend?</em></h2>
+    <div class="divider"></div>
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
-
-  <div style="max-width:480px;margin:0 auto;text-align:center;">
-
-    <!-- Header -->
-    <p style="font-family:'Raleway',sans-serif;font-size:11px;letter-spacing:0.45em;color:#c9a96e;text-transform:uppercase;margin-bottom:1rem;">
-      RSVP
-    </p>
-
-    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:3rem;color:#3a2e28;letter-spacing:0.05em;margin:0 0 0.5rem;">
-      Will You <em style="font-style:italic;color:#c9a96e;">Attend?</em>
-    </h2>
-
-    <div style="width:60px;height:1px;background:linear-gradient(90deg,transparent,#c9a96e,transparent);margin:1.25rem auto 2.5rem;"></div>
-
-    <!-- Card -->
-    <div style="background:#fff;border:0.5px solid rgba(201,169,110,0.3);border-radius:16px;padding:2.5rem 2rem;box-shadow:0 4px 32px rgba(201,169,110,0.08);">
-
-      <form style="display:flex;flex-direction:column;gap:1.25rem;">
-
-        <!-- Name -->
-        <div style="text-align:left;">
-          <label style="font-family:'Raleway',sans-serif;font-size:11px;letter-spacing:0.2em;color:#c9a96e;text-transform:uppercase;display:block;margin-bottom:0.5rem;">
-            Full Name
-          </label>
+    <div class="rsvp-card">
+      <form #rsvpForm="ngForm" (ngSubmit)="submitRsvp()" class="rsvp-form">
+        <label>
+          <span>Full Name</span>
           <input
             type="text"
+            name="name"
+            [(ngModel)]="guest.name"
             placeholder="Enter your name"
-            style="width:100%;border:0.5px solid rgba(201,169,110,0.4);border-radius:10px;padding:0.85rem 1rem;font-family:'Raleway',sans-serif;font-size:14px;color:#3a2e28;background:#faf8f5;outline:none;box-sizing:border-box;transition:border-color 0.2s;"
-            onfocus="this.style.borderColor='#c9a96e';this.style.background='#fff';"
-            onblur="this.style.borderColor='rgba(201,169,110,0.4)';this.style.background='#faf8f5';">
-        </div>
+            required>
+        </label>
 
-        <!-- Attendance -->
-        <div style="text-align:left;">
-          <label style="font-family:'Raleway',sans-serif;font-size:11px;letter-spacing:0.2em;color:#c9a96e;text-transform:uppercase;display:block;margin-bottom:0.5rem;">
-            Attendance
-          </label>
-          <select
-            style="width:100%;border:0.5px solid rgba(201,169,110,0.4);border-radius:10px;padding:0.85rem 1rem;font-family:'Raleway',sans-serif;font-size:14px;color:#3a2e28;background:#faf8f5;outline:none;box-sizing:border-box;appearance:none;cursor:pointer;"
-            onfocus="this.style.borderColor='#c9a96e';this.style.background='#fff';"
-            onblur="this.style.borderColor='rgba(201,169,110,0.4)';this.style.background='#faf8f5';">
-            <option value="yes">Yes, I will attend 🎉</option>
+        <label>
+          <span>Attendance</span>
+          <select name="attendance" [(ngModel)]="guest.attendance">
+            <option value="yes">Yes, I will attend</option>
             <option value="no">Sorry, I can't attend</option>
           </select>
+        </label>
+
+        <div class="field-grid">
+          <label>
+            <span>Guests</span>
+            <input
+              type="number"
+              name="guests"
+              min="1"
+              max="10"
+              [(ngModel)]="guest.guests"
+              required>
+          </label>
+
+          <label>
+            <span>Meal</span>
+            <select name="meal" [(ngModel)]="guest.meal">
+              <option>No preference</option>
+              <option>Vegetarian</option>
+              <option>Non-vegetarian</option>
+            </select>
+          </label>
         </div>
 
-        <!-- Number of Guests -->
-        <div style="text-align:left;">
-          <label style="font-family:'Raleway',sans-serif;font-size:11px;letter-spacing:0.2em;color:#c9a96e;text-transform:uppercase;display:block;margin-bottom:0.5rem;">
-            Number of Guests
-          </label>
-          <input
-            type="number"
-            placeholder="Including yourself"
-            min="1"
-            style="width:100%;border:0.5px solid rgba(201,169,110,0.4);border-radius:10px;padding:0.85rem 1rem;font-family:'Raleway',sans-serif;font-size:14px;color:#3a2e28;background:#faf8f5;outline:none;box-sizing:border-box;"
-            onfocus="this.style.borderColor='#c9a96e';this.style.background='#fff';"
-            onblur="this.style.borderColor='rgba(201,169,110,0.4)';this.style.background='#faf8f5';">
-        </div>
-
-        <!-- Message -->
-        <div style="text-align:left;">
-          <label style="font-family:'Raleway',sans-serif;font-size:11px;letter-spacing:0.2em;color:#c9a96e;text-transform:uppercase;display:block;margin-bottom:0.5rem;">
-            Message <span style="color:#a0917e;font-size:10px;letter-spacing:0.1em;">(Optional)</span>
-          </label>
+        <label>
+          <span>Message <small>(Optional)</small></span>
           <textarea
+            name="message"
+            [(ngModel)]="guest.message"
             placeholder="Leave a warm wish for the couple..."
-            rows="3"
-            style="width:100%;border:0.5px solid rgba(201,169,110,0.4);border-radius:10px;padding:0.85rem 1rem;font-family:'Raleway',sans-serif;font-size:14px;color:#3a2e28;background:#faf8f5;outline:none;box-sizing:border-box;resize:none;"
-            onfocus="this.style.borderColor='#c9a96e';this.style.background='#fff';"
-            onblur="this.style.borderColor='rgba(201,169,110,0.4)';this.style.background='#faf8f5';"></textarea>
-        </div>
+            rows="3"></textarea>
+        </label>
 
-        <!-- Submit -->
-        <button
-          type="submit"
-          style="margin-top:0.5rem;padding:0.9rem 2rem;background:#3a2e28;color:#f5ede0;font-family:'Raleway',sans-serif;font-size:12px;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;border:none;border-radius:50px;cursor:pointer;transition:background 0.2s,transform 0.1s;"
-          onmouseover="this.style.background='#c9a96e';"
-          onmouseout="this.style.background='#3a2e28';"
-          onmousedown="this.style.transform='scale(0.98)';"
-          onmouseup="this.style.transform='scale(1)';">
-          Submit RSVP
+        <button type="submit" [disabled]="rsvpForm.invalid">
+          Send RSVP on WhatsApp
         </button>
 
+        @if (submitted()) {
+          <p class="success-note">
+            Thank you. Your RSVP message is ready to send in WhatsApp.
+          </p>
+        }
       </form>
-
     </div>
 
-    <!-- Footer ornament -->
-    <p style="font-family:'Cormorant Garamond',serif;color:#c9a96e;font-size:1.2rem;opacity:0.6;margin:2.5rem 0 0;letter-spacing:0.5em;">
-      ✦ &nbsp; ✦ &nbsp; ✦
-    </p>
-
+    <p class="ornament">* * *</p>
   </div>
-
 </section>
