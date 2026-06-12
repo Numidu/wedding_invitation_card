@@ -68,8 +68,12 @@ export class RomanticScene implements AfterViewInit, OnDestroy {
 
     try {
       this.renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+      if (!this.renderer || !this.renderer.getContext()) {
+        throw new Error('WebGL Context is not available');
+      }
     } catch (e) {
       console.warn('WebGL is not supported or failed to initialize on this device:', e);
+      this.renderer = undefined;
       return;
     }
 
@@ -100,8 +104,13 @@ export class RomanticScene implements AfterViewInit, OnDestroy {
     this.heartGlow = this.createHeartParticles();
     this.scene.add(this.heartGlow);
 
-    this.resizeObserver = new ResizeObserver(() => this.resize());
-    this.resizeObserver.observe(host);
+    if (typeof ResizeObserver !== 'undefined') {
+      this.resizeObserver = new ResizeObserver(() => this.resize());
+      this.resizeObserver.observe(host);
+    } else {
+      window.addEventListener('resize', () => this.resize(), { passive: true });
+    }
+    
     window.addEventListener('scroll', this.handleScroll, { passive: true });
     this.resize();
     this.updateScrollProgress();
