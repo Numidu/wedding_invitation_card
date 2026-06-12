@@ -1,0 +1,40 @@
+:host {
+  display: block;
+  pointer-events: none;
+}
+
+.romantic-scene {
+  width: min(68vw, 520px);
+  height: clamp(190px, 34vw, 330px);
+  filter: drop-shadow(0 20px 40px rgba(75, 28, 12, 0.38));
+}
+
+:host(.scroll-mode) {
+  width: 100%;
+}
+
+:host(.scroll-mode) .romantic-scene {
+  width: min(88vw, 720px);
+  height: clamp(320px, 50vw, 520px);
+  filter:
+    drop-shadow(0 28px 54px rgba(102, 38, 46, 0.34))
+    drop-shadow(0 8px 20px rgba(201, 169, 110, 0.24));
+}
+
+.romantic-scene canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 640px) {
+  .romantic-scene {
+    width: min(88vw, 360px);
+    height: 210px;
+  }
+
+  :host(.scroll-mode) .romantic-scene {
+    width: min(94vw, 420px);
+    height: 330px;
+  }
+}

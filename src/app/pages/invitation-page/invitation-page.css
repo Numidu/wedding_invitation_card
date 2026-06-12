@@ -1,0 +1,104 @@
+.scroll-heart-section {
+  position: relative;
+  min-height: 118vh;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  padding: clamp(4rem, 8vw, 7rem) 1.5rem;
+  background:
+    radial-gradient(circle at 50% 36%, rgba(219, 61, 99, 0.18), transparent 22rem),
+    radial-gradient(circle at 18% 20%, rgba(201, 169, 110, 0.2), transparent 18rem),
+    linear-gradient(180deg, #faf7f2 0%, #fff8f6 42%, #f6eadf 100%);
+  color: #33251f;
+  isolation: isolate;
+}
+
+.scroll-heart-section::before,
+.scroll-heart-section::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  width: min(76vw, 680px);
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.65), transparent);
+  z-index: -1;
+}
+
+.scroll-heart-section::before {
+  top: clamp(2rem, 5vw, 4rem);
+}
+
+.scroll-heart-section::after {
+  bottom: clamp(2rem, 5vw, 4rem);
+}
+
+.scroll-heart-shine {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image:
+    linear-gradient(rgba(201, 169, 110, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201, 169, 110, 0.06) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(circle at center, #000 0%, transparent 68%);
+}
+
+.scroll-heart-copy {
+  width: min(700px, 100%);
+  margin: 0 auto;
+  text-align: center;
+  z-index: 2;
+}
+
+.scroll-heart-copy p {
+  margin: 0 0 1rem;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 300;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: #a97c43;
+}
+
+.scroll-heart-copy h2 {
+  margin: 0;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2.4rem, 7vw, 5.4rem);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 0.98;
+  color: #30241e;
+}
+
+.scroll-heart-copy span {
+  display: block;
+  max-width: 520px;
+  margin: 1.4rem auto 0;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  line-height: 1.7;
+  color: #6a594a;
+}
+
+.scroll-heart-scene {
+  width: min(100%, 760px);
+  margin: clamp(0.8rem, 3vw, 1.8rem) auto 0;
+  z-index: 1;
+}
+
+@media (max-width: 640px) {
+  .scroll-heart-section {
+    min-height: 112vh;
+    padding: 4.5rem 1rem 4rem;
+  }
+
+  .scroll-heart-copy p {
+    font-size: 0.62rem;
+    letter-spacing: 0.3em;
+  }
+
+  .scroll-heart-copy span {
+    max-width: 20rem;
+  }
+}

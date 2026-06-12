@@ -1,0 +1,16 @@
+.romantic-scene-layer {
+  position: absolute;
+  left: 50%;
+  top: 49%;
+  z-index: 4;
+  transform: translate(-50%, -50%);
+  opacity: 0.86;
+  pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  .romantic-scene-layer {
+    top: 50%;
+    opacity: 0.74;
+  }
+}
