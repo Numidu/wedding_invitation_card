@@ -66,11 +66,17 @@ export class RomanticScene implements AfterViewInit, OnDestroy {
   private createScene(): void {
     const host = this.sceneHost.nativeElement;
 
+    try {
+      this.renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    } catch (e) {
+      console.warn('WebGL is not supported or failed to initialize on this device:', e);
+      return;
+    }
+
     this.scene = new THREE.Scene();
     this.camera = new THREE.PerspectiveCamera(38, 1, 0.1, 100);
     this.camera.position.set(0, 0.15, 7.2);
 
-    this.renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     this.renderer.setClearColor(0x000000, 0);
     host.appendChild(this.renderer.domElement);
