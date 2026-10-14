@@ -3,7 +3,7 @@ import { RomanticScene } from '../romantic-scene/romantic-scene';
 
 @Component({
   selector: 'app-hero',
-  imports: [RomanticScene],
+  imports: [],
   templateUrl: './hero.html',
   styleUrl: './hero.css',
 })

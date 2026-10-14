@@ -1,104 +1,228 @@
-<section class="relative overflow-hidden" style="height:100vh; background:#1a1410; font-family:'Cormorant Garamond', Georgia, serif;">
 
-  <!-- Google Fonts -->
+<section
+  class="relative min-h-screen overflow-hidden bg-[#4a2937]"
+  style="height: 100vh; min-height: 620px; font-family: 'Cormorant Garamond', Georgia, serif;"
+>
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Jost:wght@200;300&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Jost:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  >
 
   <!-- Background Video -->
-  <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover" style="z-index:0;">
-    <source src="video/wedding.mp4" type="video/mp4">
+  <video
+    #weddingVideo
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="auto"
+    class="absolute inset-0 h-full w-full object-cover"
+    style="z-index: 0;"
+    aria-hidden="true"
+  >
+    <source src="/video/wedding.mp4" type="video/mp4">
   </video>
 
-  <audio
-  #audioPlayer
-  loop>
+  <!-- Background Color Overlay -->
+  <div
+    class="absolute inset-0"
+    style="
+      z-index: 1;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(48, 22, 34, 0.56) 0%,
+          rgba(78, 36, 51, 0.28) 50%,
+          rgba(48, 22, 34, 0.48) 100%
+        ),
+        linear-gradient(
+          180deg,
+          rgba(43, 20, 30, 0.22) 0%,
+          rgba(74, 34, 49, 0.12) 48%,
+          rgba(35, 17, 26, 0.48) 100%
+        );
+    "
+  ></div>
 
-  <source
-    src="music/weddingmusic.mp3"
-    type="audio/mpeg">
+  <!-- Background Decorative Glow -->
+  <div
+    class="pointer-events-none absolute inset-0"
+    style="
+      z-index: 2;
+      background:
+        radial-gradient(
+          ellipse at 50% 42%,
+          rgba(255, 218, 202, 0.22) 0%,
+          transparent 55%
+        ),
+        radial-gradient(
+          circle at 10% 20%,
+          rgba(238, 172, 185, 0.18) 0%,
+          transparent 35%
+        );
+    "
+  ></div>
 
-</audio>
+  <!-- Background Music -->
+  <audio #audioPlayer loop preload="none">
+    <source src="/music/weddingmusic.mp3" type="audio/mpeg">
+  </audio>
 
-<button
-  (click)="toggleMusic()"
-  class="absolute top-6 right-6 z-20
-         bg-white/20 backdrop-blur-md
-         px-4 py-2 rounded-full text-white">
+  <!-- Music Toggle -->
+  <button
+    type="button"
+    (click)="toggleMusic()"
+    class="absolute right-5 top-5 z-20 rounded-full border border-white/40
+           bg-white/15 px-5 py-3 text-white backdrop-blur-lg
+           transition duration-300 hover:bg-white/25 sm:right-8 sm:top-8"
+    style="font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 0.12em;"
+    [attr.aria-label]="isPlaying ? 'Turn music off' : 'Turn music on'"
+  >
+    {{ isPlaying ? '♫  MUSIC ON' : '♪  MUSIC OFF' }}
+  </button>
 
-  {{ isPlaying ? '🔇 Music Off' : '🎵 Music On' }}
-
-</button>
-
-  <!-- Layered Overlay -->
-  <div class="absolute inset-0" style="z-index:1; background: radial-gradient(ellipse at 50% 0%, rgba(180,140,80,0.18) 0%, transparent 60%), linear-gradient(180deg, rgba(10,8,6,0.55) 0%, rgba(20,14,10,0.4) 50%, rgba(10,8,6,0.75) 100%);"></div>
-
-  <div class="romantic-scene-layer">
-    <app-romantic-scene></app-romantic-scene>
-  </div>
-
-  <!-- Top ornament -->
-  <div class="absolute top-8 left-1/2 -translate-x-1/2" style="z-index:3;">
-    <svg width="220" height="24" viewBox="0 0 220 24" fill="none">
-      <line x1="0" y1="12" x2="90" y2="12" stroke="#c9a96e" stroke-width="0.5" stroke-opacity="0.5"/>
-      <polygon points="110,4 118,12 110,20 102,12" stroke="#c9a96e" stroke-width="0.5" fill="none" stroke-opacity="0.7"/>
-      <line x1="130" y1="12" x2="220" y2="12" stroke="#c9a96e" stroke-width="0.5" stroke-opacity="0.5"/>
-    </svg>
-  </div>
-
-  <!-- Content -->
-  <div class="relative z-10 h-full flex flex-col justify-center items-center text-center px-6" style="color:#f5ede0;">
-
-    <!-- Eyebrow -->
-    <p style="font-family:'Jost',sans-serif; font-weight:200; font-size:10px; letter-spacing:0.55em; text-transform:uppercase; color:#c9a96e; margin:0 0 1.5rem;">
-      Wedding Invitation
-    </p>
-
-    <!-- Diamond divider -->
-    <div style="display:flex; align-items:center; gap:10px; margin-bottom:1.4rem;">
-      <span style="width:60px; height:0.5px; background:linear-gradient(90deg,transparent,#c9a96e88,#c9a96e);"></span>
-      <span style="width:5px; height:5px; background:#c9a96e; transform:rotate(45deg); flex-shrink:0;"></span>
-      <span style="width:3px; height:3px; background:#c9a96e; transform:rotate(45deg); flex-shrink:0; opacity:0.5;"></span>
-      <span style="width:5px; height:5px; background:#c9a96e; transform:rotate(45deg); flex-shrink:0;"></span>
-      <span style="width:60px; height:0.5px; background:linear-gradient(90deg,#c9a96e,#c9a96e88,transparent);"></span>
+  <!-- Main Content -->
+  <div
+    class="relative z-10 flex h-full flex-col items-center justify-center px-5
+           text-center sm:px-8"
+    style="color: #fff8f1;"
+  >
+    <!-- Top Ornament -->
+    <div class="mb-7 flex items-center gap-4 sm:mb-9" aria-hidden="true">
+      <span class="h-px w-12 sm:w-20" style="background: #f2c9a5;"></span>
+      <span style="color: #f5d4aa; font-size: 25px;">✧</span>
+      <span class="h-px w-12 sm:w-20" style="background: #f2c9a5;"></span>
     </div>
 
-    <!-- Names -->
-    <h1 style="font-family:'Cormorant Garamond',Georgia,serif; font-weight:300; font-style:italic; font-size:clamp(3rem,8vw,4.8rem); line-height:1.05; color:#f5ede0; letter-spacing:0.01em; margin:0 0 0.15em;">
-      Numidu <span style="font-style:normal; color:#c9a96e; font-size:0.72em;">&amp;</span> Bride
+    <!-- Eyebrow -->
+    <p
+      class="mb-5 uppercase sm:mb-6"
+      style="
+        font-family: 'Jost', sans-serif;
+        font-size: 11px;
+        font-weight: 400;
+        letter-spacing: 0.38em;
+        color: #ffd7b8;
+      "
+    >
+      Together with our families
+    </p>
+
+    <!-- Heading -->
+    <h1
+      class="max-w-full"
+      style="
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-size: clamp(3.5rem, 9vw, 7rem);
+        line-height: 0.98;
+        font-weight: 300;
+        letter-spacing: -0.025em;
+        color: #fff8f1;
+        text-shadow: 0 3px 30px rgba(30, 10, 20, 0.25);
+      "
+    >
+      Anjana
+      <span
+        class="inline-block px-1"
+        style="color: #ffd09e; font-style: italic; font-weight: 300;"
+      >
+        &
+      </span>
+      <br class="sm:hidden">
+      <span style="font-style: italic;">Sayuri</span>
     </h1>
 
+    <!-- Decorative Divider -->
+    <div class="my-6 flex items-center gap-3 sm:my-8" aria-hidden="true">
+      <span class="h-px w-8" style="background: rgba(255, 215, 184, 0.8);"></span>
+      <span style="color: #ffd09e; font-size: 15px;">♥</span>
+      <span class="h-px w-8" style="background: rgba(255, 215, 184, 0.8);"></span>
+    </div>
+
     <!-- Tagline -->
-    <p style="font-family:'Jost',sans-serif; font-weight:200; font-size:12px; letter-spacing:0.3em; text-transform:uppercase; color:rgba(201,169,110,0.7); margin:1.5rem 0 0.5rem;">
+    <p
+      class="uppercase"
+      style="
+        font-family: 'Jost', sans-serif;
+        font-size: clamp(10px, 2vw, 13px);
+        font-weight: 300;
+        letter-spacing: 0.3em;
+        color: #ffe7d7;
+      "
+    >
       We are getting married
     </p>
 
     <!-- Date -->
-    <div style="display:flex; align-items:center; justify-content:center; gap:16px; margin:0.6rem 0 2.4rem;">
-      <span style="font-family:'Jost',sans-serif; font-weight:300; font-size:13px; letter-spacing:0.3em; text-transform:uppercase; color:#f0e0c8;">December</span>
-      <span style="width:3px; height:3px; border-radius:50%; background:#c9a96e; flex-shrink:0;"></span>
-      <span style="font-family:'Jost',sans-serif; font-weight:300; font-size:17px; letter-spacing:0.15em; color:#f0e0c8;">15</span>
-      <span style="width:3px; height:3px; border-radius:50%; background:#c9a96e; flex-shrink:0;"></span>
-      <span style="font-family:'Jost',sans-serif; font-weight:300; font-size:13px; letter-spacing:0.3em; text-transform:uppercase; color:#f0e0c8;">2026</span>
+    <div
+      class="my-7 flex items-center justify-center gap-4 sm:my-9 sm:gap-6"
+      style="color: #fff0df;"
+    >
+      <span
+        class="uppercase"
+        style="font-family: 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.18em;"
+      >
+        December
+      </span>
+
+      <span class="h-1 w-1 rounded-full" style="background: #ffd09e;"></span>
+
+      <span style="font-family: 'Cormorant Garamond', serif; font-size: 29px;">
+        15
+      </span>
+
+      <span class="h-1 w-1 rounded-full" style="background: #ffd09e;"></span>
+
+      <span
+        style="font-family: 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.15em;"
+      >
+        2026
+      </span>
     </div>
 
-    <!-- Button — Angular click binding preserved -->
+    <!-- Open Invitation Button -->
     <button
+      type="button"
       (click)="openInvitation()"
-      style="display:inline-flex; align-items:center; gap:10px; font-family:'Jost',sans-serif; font-weight:300; font-size:11px; letter-spacing:0.4em; text-transform:uppercase; color:#f5ede0; background:transparent; border:0.5px solid rgba(201,169,110,0.5); padding:13px 32px; border-radius:100px; cursor:pointer; transition:all 0.4s ease;"
-      onmouseover="this.style.borderColor='#c9a96e'; this.style.letterSpacing='0.5em'; this.style.transform='scale(1.04)'"
-      onmouseout="this.style.borderColor='rgba(201,169,110,0.5)'; this.style.letterSpacing='0.4em'; this.style.transform='scale(1)'">
+      class="group inline-flex items-center gap-4 rounded-full px-8 py-4
+             transition-all duration-300 hover:-translate-y-1
+             hover:shadow-2xl sm:px-10"
+      style="
+        background: linear-gradient(135deg, #ffe3c7 0%, #e8b982 100%);
+        color: #562c3b;
+        border: 1px solid rgba(255, 248, 241, 0.8);
+        box-shadow: 0 8px 30px rgba(30, 10, 20, 0.18);
+        font-family: 'Jost', sans-serif;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        cursor: pointer;
+      "
+    >
       Open Invitation
+      <span
+        class="transition-transform duration-300 group-hover:translate-x-1"
+        style="font-size: 18px;"
+      >
+        →
+      </span>
     </button>
 
+    <!-- Bottom Caption -->
+    <p
+      class="absolute bottom-9 px-4 uppercase sm:bottom-11"
+      style="
+        font-family: 'Jost', sans-serif;
+        font-size: 9px;
+        letter-spacing: 0.28em;
+        color: rgba(255, 231, 215, 0.85);
+      "
+    >
+      A beautiful beginning · A lifetime of love
+    </p>
   </div>
-
-  <!-- Bottom ornament -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2" style="z-index:3;">
-    <svg width="220" height="24" viewBox="0 0 220 24" fill="none">
-      <line x1="0" y1="12" x2="90" y2="12" stroke="#c9a96e" stroke-width="0.5" stroke-opacity="0.5"/>
-      <polygon points="110,4 118,12 110,20 102,12" stroke="#c9a96e" stroke-width="0.5" fill="none" stroke-opacity="0.7"/>
-      <line x1="130" y1="12" x2="220" y2="12" stroke="#c9a96e" stroke-width="0.5" stroke-opacity="0.5"/>
-    </svg>
-  </div>
-
 </section>
