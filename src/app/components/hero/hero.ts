@@ -1,5 +1,4 @@
 import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
-import { RomanticScene } from '../romantic-scene/romantic-scene';
 
 @Component({
   selector: 'app-hero',
