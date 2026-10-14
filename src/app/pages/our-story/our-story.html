@@ -1,186 +1,142 @@
-<section class="min-h-screen bg-[#FAF7F2] py-24 px-6">
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+<section class="story-section relative overflow-hidden bg-[#FAF7F2] px-5 py-16 sm:px-8 sm:py-20 lg:py-24">
 
-  <div class="max-w-4xl mx-auto">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Raleway:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Subtle decorative circles -->
+  <div class="pointer-events-none absolute -left-28 top-32 h-64 w-64 rounded-full border border-[#C9A96E]/10"></div>
+  <div class="pointer-events-none absolute -right-32 bottom-20 h-72 w-72 rounded-full border border-[#C9A96E]/10"></div>
+
+  <div class="relative z-10 mx-auto max-w-4xl">
 
     <!-- Header -->
-    <div class="text-center mb-24">
+    <header class="mb-14 text-center sm:mb-20">
 
-      <p style="font-family:'Raleway',sans-serif;font-size:11px;letter-spacing:0.45em;color:#c9a96e;text-transform:uppercase;margin-bottom:1rem;">
+      <p class="story-eyebrow">
         Our Journey
       </p>
 
-      <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:3rem;color:#3a2e28;letter-spacing:0.05em;">
-        Our <em style="font-style:italic;color:#c9a96e;">Story</em>
+      <h2 class="story-heading">
+        Our <em>Story</em>
       </h2>
 
-      <div style="width:60px;height:1px;background:linear-gradient(90deg,transparent,#c9a96e,transparent);margin:1.5rem auto 0;"></div>
+      <p class="story-intro">
+        Every love story is beautiful, but ours is our favourite.
+      </p>
 
-    </div>
+      <div class="story-heading-line"></div>
+
+    </header>
 
     <!-- Timeline -->
-    <div class="relative">
+    <div class="story-timeline">
 
-      <!-- Center Line -->
-      <div
-        class="absolute left-1/2 top-0 h-full -translate-x-1/2"
-        style="width:1px;background:linear-gradient(to bottom,transparent,#c9a96e 10%,#c9a96e 90%,transparent);">
-      </div>
-
-      <!-- Item 1 — Left -->
-      <div class="relative mb-20">
-
-        <!-- Dot -->
-        <div
-          class="absolute left-1/2 -translate-x-1/2"
-          style="top:0.6rem;width:14px;height:14px;border-radius:50%;background:#fff;border:2px solid #c9a96e;box-shadow:0 0 0 4px rgba(201,169,110,0.15);z-index:1;">
+      <!-- 2019 -->
+      <article class="story-item">
+        <div class="story-marker">
+          <span class="story-dot"></span>
+          <span class="story-year">2019</span>
         </div>
 
-        <!-- Year badge on center -->
-        <div
-          class="absolute left-1/2 -translate-x-1/2"
-          style="top:-1.6rem;font-family:'Raleway',sans-serif;font-size:10px;letter-spacing:0.2em;color:#c9a96e;text-transform:uppercase;white-space:nowrap;">
-          2019
+        <div class="story-card">
+          <span class="story-number">01</span>
+
+          <p class="story-label">WHERE IT ALL BEGAN</p>
+
+          <h3>First Met</h3>
+
+          <p class="story-description">
+            The beginning of a beautiful friendship.
+          </p>
+        </div>
+      </article>
+
+      <!-- 2023 -->
+      <article class="story-item">
+        <div class="story-marker">
+          <span class="story-dot"></span>
+          <span class="story-year">2023</span>
         </div>
 
-        <div class="w-1/2 pr-12 text-right">
+        <div class="story-card">
+          <span class="story-number">02</span>
 
-          <div style="background:#fff;border:0.5px solid rgba(201,169,110,0.3);border-radius:12px;padding:1.5rem 1.75rem;box-shadow:0 2px 16px rgba(201,169,110,0.08);">
+          <p class="story-label">HEARTS INTERTWINED</p>
 
-            <h3 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:1.6rem;color:#3a2e28;margin:0 0 0.5rem;letter-spacing:0.03em;">
-              First Met
-            </h3>
+          <h3>Started Dating</h3>
 
-            <p style="font-size:13px;color:#a0917e;font-style:italic;margin:0 0 0.75rem;">
-              Where it all began
-            </p>
+          <p class="story-description">
+            Countless memories, little adventures, and a love that grew stronger.
+          </p>
+        </div>
+      </article>
 
-            <p style="font-size:14px;color:#6b5d52;line-height:1.7;margin:0;font-family:'Raleway',sans-serif;font-weight:300;">
-              The beginning of a beautiful friendship.
-            </p>
+      <!-- 2025 -->
+      <article class="story-item">
+        <div class="story-marker">
+          <span class="story-dot"></span>
+          <span class="story-year">2025</span>
+        </div>
 
+        <div class="story-card">
+          <span class="story-number">03</span>
+
+          <p class="story-label">A FOREVER PROMISE</p>
+
+          <h3>Engagement</h3>
+
+          <p class="story-description">
+            A promise to walk through life together, hand in hand.
+          </p>
+        </div>
+      </article>
+
+      <!-- 2026 -->
+      <article class="story-item story-item-final">
+        <div class="story-marker">
+          <span class="story-dot"></span>
+          <span class="story-year">2026</span>
+        </div>
+
+        <div class="story-card story-card-final">
+          <span class="story-number">04</span>
+
+          <p class="story-label">OUR NEXT CHAPTER</p>
+
+          <h3>Wedding Day</h3>
+
+          <p class="story-description">
+            Two hearts, one promise, and a lifetime of love begins.
+          </p>
+
+          <div class="story-date">
+            <span>DECEMBER</span>
+            <span class="story-date-dot"></span>
+            <span>15</span>
+            <span class="story-date-dot"></span>
+            <span>2026</span>
           </div>
-
         </div>
-
-      </div>
-
-      <!-- Item 2 — Right -->
-      <div class="relative mb-20">
-
-        <div
-          class="absolute left-1/2 -translate-x-1/2"
-          style="top:0.6rem;width:14px;height:14px;border-radius:50%;background:#fff;border:2px solid #c9a96e;box-shadow:0 0 0 4px rgba(201,169,110,0.15);z-index:1;">
-        </div>
-
-        <div
-          class="absolute left-1/2 -translate-x-1/2"
-          style="top:-1.6rem;font-family:'Raleway',sans-serif;font-size:10px;letter-spacing:0.2em;color:#c9a96e;text-transform:uppercase;white-space:nowrap;">
-          2023
-        </div>
-
-        <div class="ml-auto w-1/2 pl-12">
-
-          <div style="background:#fff;border:0.5px solid rgba(201,169,110,0.3);border-radius:12px;padding:1.5rem 1.75rem;box-shadow:0 2px 16px rgba(201,169,110,0.08);">
-
-            <h3 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:1.6rem;color:#3a2e28;margin:0 0 0.5rem;letter-spacing:0.03em;">
-              Started Dating
-            </h3>
-
-            <p style="font-size:13px;color:#a0917e;font-style:italic;margin:0 0 0.75rem;">
-              Hearts intertwined
-            </p>
-
-            <p style="font-size:14px;color:#6b5d52;line-height:1.7;margin:0;font-family:'Raleway',sans-serif;font-weight:300;">
-              Countless memories and adventures together.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- Item 3 — Left -->
-      <div class="relative mb-20">
-
-        <div
-          class="absolute left-1/2 -translate-x-1/2"
-          style="top:0.6rem;width:14px;height:14px;border-radius:50%;background:#fff;border:2px solid #c9a96e;box-shadow:0 0 0 4px rgba(201,169,110,0.15);z-index:1;">
-        </div>
-
-        <div
-          class="absolute left-1/2 -translate-x-1/2"
-          style="top:-1.6rem;font-family:'Raleway',sans-serif;font-size:10px;letter-spacing:0.2em;color:#c9a96e;text-transform:uppercase;white-space:nowrap;">
-          2025
-        </div>
-
-        <div class="w-1/2 pr-12 text-right">
-
-          <div style="background:#fff;border:0.5px solid rgba(201,169,110,0.3);border-radius:12px;padding:1.5rem 1.75rem;box-shadow:0 2px 16px rgba(201,169,110,0.08);">
-
-            <h3 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:1.6rem;color:#3a2e28;margin:0 0 0.5rem;letter-spacing:0.03em;">
-              Engagement
-            </h3>
-
-            <p style="font-size:13px;color:#a0917e;font-style:italic;margin:0 0 0.75rem;">
-              A forever promise
-            </p>
-
-            <p style="font-size:14px;color:#6b5d52;line-height:1.7;margin:0;font-family:'Raleway',sans-serif;font-weight:300;">
-              We promised forever.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- Item 4 — Right -->
-      <div class="relative">
-
-        <div
-          class="absolute left-1/2 -translate-x-1/2"
-          style="top:0.6rem;width:16px;height:16px;border-radius:50%;background:#c9a96e;border:2px solid #c9a96e;box-shadow:0 0 0 6px rgba(201,169,110,0.2);z-index:1;">
-        </div>
-
-        <div
-          class="absolute left-1/2 -translate-x-1/2"
-          style="top:-1.6rem;font-family:'Raleway',sans-serif;font-size:10px;letter-spacing:0.2em;color:#c9a96e;text-transform:uppercase;white-space:nowrap;">
-          2026
-        </div>
-
-        <div class="ml-auto w-1/2 pl-12">
-
-          <div style="background:linear-gradient(135deg,#fff9f0,#fff);border:1px solid rgba(201,169,110,0.5);border-radius:12px;padding:1.5rem 1.75rem;box-shadow:0 4px 24px rgba(201,169,110,0.15);">
-
-            <h3 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:1.6rem;color:#3a2e28;margin:0 0 0.5rem;letter-spacing:0.03em;">
-              Wedding Day
-            </h3>
-
-            <p style="font-size:13px;color:#c9a96e;font-style:italic;margin:0 0 0.75rem;font-weight:500;">
-              The next chapter begins
-            </p>
-
-            <p style="font-size:14px;color:#6b5d52;line-height:1.7;margin:0;font-family:'Raleway',sans-serif;font-weight:300;">
-              The next chapter begins.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
+      </article>
 
     </div>
 
-    <!-- Footer ornament -->
-    <p style="font-family:'Cormorant Garamond',serif;color:#c9a96e;font-size:1.2rem;opacity:0.6;margin:4rem 0 0;letter-spacing:0.5em;text-align:center;">
-      ✦ &nbsp; ✦ &nbsp; ✦
-    </p>
+    <!-- Closing message -->
+    <footer class="story-footer">
+      <div class="story-footer-line"></div>
+
+      <p>
+        And our forever begins...
+      </p>
+
+      <span aria-hidden="true">♥</span>
+    </footer>
 
   </div>
-
 </section>

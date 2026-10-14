@@ -1,23 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
-
+/* Global styles for the wedding invitation site */
 @import 'tailwindcss';
-body{
-  font-family: 'Playfair Display', serif;
+
+:root {
+  /* Primary background gradient for all pages */
+  --bg-gradient: linear-gradient(180deg, #faf7f2 0%, #fff8f6 42%, #f6eadf 100%);
+  /* Base text color */
+  --text-color: #33251f;
+  /* Primary font family */
+  --font-family: 'Playfair Display', serif;
+  /* Responsive base font size */
+  --base-font-size: clamp(1rem, 1vw + 0.5rem, 1.2rem);
 }
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  font-size: var(--base-font-size);
+  color: var(--text-color);
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+}
+
+/* Simple fade‑in animation used across the site */
 .fade-in {
   animation: fadeIn 1s ease;
 }
 
 @keyframes fadeIn {
-
   from {
     opacity: 0;
     transform: translateY(20px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
   }
-
 }

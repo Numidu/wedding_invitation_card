@@ -1,0 +1,269 @@
+:root {
+  --cream: #fffaf1;
+  --parchment: #f4ead7;
+  --gold: #c9a96e;
+  --gold-light: #f0dfb7;
+  --gold-dark: #8d6a37;
+  --rose: #c4847a;
+  --text-dark: #34281e;
+  --text-mid: #76604a;
+  --text-light: #9b876d;
+}
+
+/* Elegant wedding background */
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 28px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lato', sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  background:
+    radial-gradient(
+      ellipse at 15% 15%,
+      rgba(232, 197, 138, 0.27),
+      transparent 35%
+    ),
+    radial-gradient(
+      ellipse at 85% 80%,
+      rgba(255, 239, 208, 0.2),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #30261e 0%,
+      #51402e 45%,
+      #30251d 100%
+    );
+}
+
+/* Soft golden light and subtle decorative texture */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(255, 229, 178, 0.15),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 0% 100%,
+      rgba(201, 169, 110, 0.12),
+      transparent 40%
+    );
+
+  opacity: 1;
+}
+
+.card-wrapper {
+  position: relative;
+  z-index: 1;
+  width: min(720px, 100%);
+  padding: 12px;
+  margin: auto;
+}
+
+/* Champagne-gold outer frame */
+.outer-frame {
+  position: relative;
+  padding: 2px;
+  border-radius: 5px;
+
+  background: linear-gradient(
+    135deg,
+    #8c6836,
+    #f6e6bd,
+    #c9a96e,
+    #fff0c9,
+    #8c6836
+  );
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.35),
+    0 0 35px rgba(232, 197, 138, 0.12);
+}
+
+/* Soft ivory invitation card */
+.inner-frame {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+
+  padding: 56px 52px 48px;
+  border-radius: 4px;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(255, 255, 255, 0.98),
+      transparent 65%
+    ),
+    linear-gradient(
+      145deg,
+      #fffdf8 0%,
+      #fff8eb 55%,
+      #f6ecd9 100%
+    );
+}
+
+/* Keep decorative artwork behind all invitation text */
+.floral-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0.075;
+  pointer-events: none;
+}
+
+.floral-bg svg {
+  width: 65%;
+  height: 65%;
+}
+
+/* More refined typography */
+.eyebrow {
+  color: #8d6a37;
+  letter-spacing: 0.35em;
+}
+
+.date-heading {
+  color: #34281e;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.subtitle {
+  color: #76604a;
+}
+
+.subtitle em {
+  color: #a07840;
+}
+
+.time-number {
+  color: #34281e;
+}
+
+.time-label {
+  color: #8d6a37;
+}
+
+.countdown-grid {
+  border-color: rgba(201, 169, 110, 0.55);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.time-block {
+  border-color: rgba(201, 169, 110, 0.4);
+}
+
+.names-row .name {
+  color: #76604a;
+}
+
+.ampersand {
+  color: #b18b4e;
+}
+
+.footer-text {
+  color: #8e7a61;
+}
+
+/* Mobile-friendly layout */
+@media (max-width: 480px) {
+  body {
+    padding: 16px 8px;
+    align-items: center;
+  }
+
+  .card-wrapper {
+    padding: 5px;
+  }
+
+  .inner-frame {
+    padding: 44px 16px 32px;
+  }
+
+  .corner {
+    width: 42px;
+    height: 42px;
+  }
+
+  .date-heading {
+    font-size: clamp(2rem, 8vw, 2.7rem);
+    line-height: 1.15;
+  }
+
+  .eyebrow {
+    font-size: 0.58rem;
+    letter-spacing: 0.25em;
+  }
+
+  .divider-line {
+    width: 42px;
+  }
+
+  .countdown-grid {
+    margin-top: 30px;
+  }
+
+  .time-block {
+    padding: 23px 3px 17px;
+  }
+
+  .time-number {
+    font-size: clamp(1.8rem, 7vw, 2.5rem);
+  }
+
+  .time-label {
+    font-size: 0.4rem;
+    letter-spacing: 0.12em;
+    margin-top: 9px;
+  }
+
+  .names-row {
+    gap: 10px;
+    margin-top: 28px;
+  }
+
+  .name {
+    font-size: 1.1rem;
+  }
+
+  .ampersand {
+    font-size: 1.7rem;
+  }
+
+  .footer-text {
+    font-size: 0.56rem;
+    letter-spacing: 0.2em;
+    line-height: 1.8;
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .eyebrow,
+  .divider,
+  .date-heading,
+  .subtitle,
+  .countdown-grid,
+  .names-row,
+  .footer-text {
+    animation: none;
+    opacity: 1;
+  }
+}

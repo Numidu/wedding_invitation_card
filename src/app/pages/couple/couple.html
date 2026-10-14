@@ -1,68 +1,219 @@
-<section style="background:#faf8f5; padding:4rem 2rem; text-align:center; font-family:'Raleway',sans-serif; position:relative; overflow:hidden;">
+<section
+  class="couple-section relative overflow-hidden"
+  style="
+    background: linear-gradient(180deg, #fffdf9 0%, #f7f1e8 100%);
+    padding: clamp(3.5rem, 8vw, 6rem) 1.25rem;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+  "
+>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Raleway:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  >
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Raleway:wght@300;400&display=swap" rel="stylesheet">
+  <!-- Top Gold Accent -->
+  <div
+    class="absolute top-0 left-0 right-0"
+    style="
+      height: 3px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        #c9a96e,
+        #ead7b2,
+        #c9a96e,
+        transparent
+      );
+    "
+  ></div>
 
-  <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#c9a96e,transparent);"></div>
+  <!-- Decorative Background Elements -->
+  <div
+    class="pointer-events-none absolute"
+    style="
+      width: 220px;
+      height: 220px;
+      top: 50px;
+      left: -130px;
+      border: 1px solid rgba(201, 169, 110, 0.13);
+      border-radius: 50%;
+    "
+    aria-hidden="true"
+  ></div>
 
-  <p style="font-size:11px;letter-spacing:0.45em;color:#c9a96e;text-transform:uppercase;margin-bottom:1rem;">
-    The Couple
-  </p>
+  <div
+    class="pointer-events-none absolute"
+    style="
+      width: 280px;
+      height: 280px;
+      bottom: 0;
+      right: -180px;
+      border: 1px solid rgba(201, 169, 110, 0.13);
+      border-radius: 50%;
+    "
+    aria-hidden="true"
+  ></div>
 
-  <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:2.8rem;color:#3a2e28;letter-spacing:0.05em;margin:0 0 3.5rem;">
-    Bride <em style="font-style:italic;color:#c9a96e;">&</em> Groom
-  </h2>
+  <!-- Section Heading -->
+  <div class="relative z-10 mx-auto max-w-5xl">
 
-  <div style="display:flex;align-items:center;justify-content:center;gap:3rem;flex-wrap:wrap;">
+    <p
+      style="
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.38em;
+        color: #a78243;
+        text-transform: uppercase;
+        margin: 0 0 1rem;
+      "
+    >
+      The Couple
+    </p>
 
-    <!-- Groom -->
-    <div style="flex:0 0 220px;display:flex;flex-direction:column;align-items:center;">
-      <div style="position:relative;width:180px;height:180px;margin-bottom:1.5rem;">
-        <div style="position:absolute;inset:-8px;border-radius:50%;border:1px solid #c9a96e;opacity:0.5;"></div>
-        <div style="position:absolute;inset:-16px;border-radius:50%;border:1px solid #c9a96e;opacity:0.2;"></div>
-        <img
-          src="image/grrom.jfif"
-          alt="Groom"
-          style="width:180px;height:180px;border-radius:50%;object-fit:cover;border:3px solid #fff;box-shadow:0 4px 24px rgba(201,169,110,0.2);position:relative;z-index:1;">
-      </div>
-      <h3 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:2rem;color:#3a2e28;margin:0 0 0.4rem;letter-spacing:0.03em;">
-        Numidu
-      </h3>
-      <p style="font-size:12px;color:#a0917e;font-style:italic;letter-spacing:0.04em;margin:0;">
-        Son of Mr. &amp; Mrs. ...
-      </p>
+    <h2
+      style="
+        font-family: 'Cormorant Garamond', serif;
+        font-weight: 300;
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        line-height: 1.1;
+        color: #45372c;
+        margin: 0;
+      "
+    >
+      Two Hearts,
+      <span style="font-style: italic; color: #b38b50;">
+        One Love
+      </span>
+    </h2>
+
+    <p
+      style="
+        max-width: 420px;
+        margin: 1rem auto 0;
+        font-size: 12px;
+        line-height: 1.9;
+        font-weight: 300;
+        color: #8d7d6a;
+      "
+    >
+      Together with our families, we begin a beautiful new chapter.
+    </p>
+
+    <!-- Couple Cards -->
+    <div
+      class="couple-grid mx-auto mt-12 grid grid-cols-1 items-stretch gap-10 sm:mt-16 sm:grid-cols-2 sm:gap-8 lg:gap-14"
+    >
+
+      <!-- Groom Card -->
+      <article class="couple-card group relative flex flex-col items-center">
+
+        <!-- Portrait Frame -->
+        <div class="portrait-frame relative">
+
+          <div class="portrait-ring" aria-hidden="true"></div>
+          <div class="portrait-ring portrait-ring-outer" aria-hidden="true"></div>
+
+          <img
+            src="/image/grrom.jfif"
+            alt="Portrait of the groom, Numidu"
+            class="couple-photo"
+            loading="lazy"
+            decoding="async"
+          >
+
+          <!-- Small Gold Label -->
+          <div class="portrait-label">
+            THE GROOM
+          </div>
+        </div>
+
+        <h3 class="couple-name">
+          Numidu
+        </h3>
+
+        <div class="name-divider" aria-hidden="true">
+          <span></span>
+          <span class="divider-diamond">✦</span>
+          <span></span>
+        </div>
+
+        <p class="family-caption">
+          Son of Mr. &amp; Mrs. ...
+        </p>
+
+      </article>
+
+      <!-- Bride Card -->
+      <article class="couple-card group relative flex flex-col items-center">
+
+        <!-- Portrait Frame -->
+        <div class="portrait-frame relative">
+
+          <div class="portrait-ring" aria-hidden="true"></div>
+          <div class="portrait-ring portrait-ring-outer" aria-hidden="true"></div>
+
+          <img
+            src="/image/bride.jfif"
+            alt="Portrait of the bride"
+            class="couple-photo"
+            loading="lazy"
+            decoding="async"
+          >
+
+          <!-- Small Gold Label -->
+          <div class="portrait-label">
+            THE BRIDE
+          </div>
+        </div>
+
+        <h3 class="couple-name">
+          Bride Name
+        </h3>
+
+        <div class="name-divider" aria-hidden="true">
+          <span></span>
+          <span class="divider-diamond">✦</span>
+          <span></span>
+        </div>
+
+        <p class="family-caption">
+          Daughter of Mr. &amp; Mrs. ...
+        </p>
+
+      </article>
+
     </div>
 
-    <!-- Divider -->
-    <div style="display:flex;flex-direction:column;align-items:center;gap:0.5rem;">
-      <div style="width:1px;height:48px;background:linear-gradient(to bottom,transparent,#c9a96e,transparent);"></div>
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M14 23.5C14 23.5 3.5 17 3.5 9.5C3.5 6.46 5.96 4 9 4C11.09 4 12.91 5.12 14 6.78C15.09 5.12 16.91 4 19 4C22.04 4 24.5 6.46 24.5 9.5C24.5 17 14 23.5 14 23.5Z" fill="#c9a96e"/>
+    <!-- Romantic Center Divider -->
+    <div
+      class="couple-heart-divider"
+      aria-hidden="true"
+    >
+      <span></span>
+
+      <svg
+        width="25"
+        height="25"
+        viewBox="0 0 28 28"
+        fill="none"
+      >
+        <path
+          d="M14 23.5C14 23.5 3.5 17 3.5 9.5C3.5 6.46 5.96 4 9 4C11.09 4 12.91 5.12 14 6.78C15.09 5.12 16.91 4 19 4C22.04 4 24.5 6.46 24.5 9.5C24.5 17 14 23.5 14 23.5Z"
+          fill="#C9A96E"
+        />
       </svg>
-      <div style="width:1px;height:48px;background:linear-gradient(to bottom,transparent,#c9a96e,transparent);"></div>
+
+      <span></span>
     </div>
 
-    <!-- Bride -->
-    <div style="flex:0 0 220px;display:flex;flex-direction:column;align-items:center;">
-      <div style="position:relative;width:180px;height:180px;margin-bottom:1.5rem;">
-        <div style="position:absolute;inset:-8px;border-radius:50%;border:1px solid #c9a96e;opacity:0.5;"></div>
-        <div style="position:absolute;inset:-16px;border-radius:50%;border:1px solid #c9a96e;opacity:0.2;"></div>
-        <img
-          src="image/bride.jfif"
-          alt="Bride"
-          style="width:180px;height:180px;border-radius:50%;object-fit:cover;border:3px solid #fff;box-shadow:0 4px 24px rgba(201,169,110,0.2);position:relative;z-index:1;">
-      </div>
-      <h3 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:2rem;color:#3a2e28;margin:0 0 0.4rem;letter-spacing:0.03em;">
-        Bride Name
-      </h3>
-      <p style="font-size:12px;color:#a0917e;font-style:italic;letter-spacing:0.04em;margin:0;">
-        Daughter of Mr. &amp; Mrs. ...
-      </p>
-    </div>
+    <!-- Closing Message -->
+    <p class="couple-closing">
+      Two souls, one beautiful journey.
+    </p>
 
   </div>
-
-  <p style="font-family:'Cormorant Garamond',serif;color:#c9a96e;font-size:1.2rem;opacity:0.6;margin:3rem 0 0;letter-spacing:0.5em;">
-    ✦ &nbsp; ✦ &nbsp; ✦
-  </p>
-
 </section>
